@@ -12,21 +12,22 @@
 def is_prime(given):
     acc = 0
     test = 0
-    torf = 0
-    test_numbers = [1,2,3,4,5,6,7,8]
-    if given == 2:
-        given = True
-        return given 
-    else: 
-        for i in test_numbers:
-            test = int(given/i)
-        if acc == 1:
-            given = True
-            return True
-        else: 
-            given = False 
-            return given
+    numbers = [2, 3, 5, 7]
 
+    if given == 1:
+        given = False
+    else:
+        for i in numbers:
+            if i == given:
+                given = True
+            else:
+                test = given/i 
+                test -= int(test)
+                if test == 0:
+                    acc+=1
+        if acc >= 1:
+            given = False
+    return given
 
 checking = int(input("Pleae provide a number: "))
 
