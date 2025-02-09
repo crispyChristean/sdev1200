@@ -18,10 +18,10 @@ class pet:
 #Function to set the name of the pet, when used it will need two parameters, the object and the name that will be integrated as a attribute.
     def set_name(self, name):
         self.__name = name
-#Function to set the name of the pet, when used it will need two parameters, the object and the name that will be integrated as a attribute.
+#Function to set the type of the pet used it will need two parameters, the object and the name that will be integrated as a attribute.
     def set_animal_type(self, animal_type):
         self.__animal_type = animal_type 
-#Function to set the name of the pet, when used it will need two parameters, the object and the name that will be integrated as a attribute.
+#Function to set the age the pet, when used it will need two parameters, the object and the name that will be integrated as a attribute.
     def set_age(self, age):
         self.__age = age
 
