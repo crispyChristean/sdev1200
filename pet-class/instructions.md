@@ -4,7 +4,7 @@ Write a class named `Pet`, which should have the following data attributes:
 - `__name` (for the name of a pet)
 - `__animal_type` (for the type of animal that a pet is. Example values are ‘Dog’, ‘Cat’, and ‘Bird’)
 - `__age` (for the pet’s age)
-
+                   
 The Pet class should have an `__init__` method that creates these attributes. It should also have the following methods:
 - `set_name`
 
