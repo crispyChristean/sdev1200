@@ -1,29 +1,4 @@
-#Testing ground for the retailItem and cashregister assignments. Not intended for grading.
-# Christian Espinoza Celis 
-# 02/12/2024
-# Cash Register Programming Project
-# SDEV 1200
-#
-
-# Use comments liberally throughout the program. 
-
-#Gets the RetailItem class from the retailitem-class program 
-#It is important to note that the file had to be renamed due to the use of a hyphen conflicting.
-
-
-
-
-class RetailItem:
-
-    def __init__(object, description, units_in_inventory, price):
-        object.description = description
-        object.units_in_inventory = units_in_inventory
-        object.price = price
-
-    def displayItemInfo(self):
-        print(f'{self.description} \t {self.units_in_inventory} \t ${self.price}')
-
-
+from RetailItem import RetailItem
 
 class CashRegister:
     #Basically when the class is called to create the object, the object will have the data and following methods automatically.
@@ -87,25 +62,3 @@ class CashRegister:
         print(f'Total: ${self.get_total2()}')
         
             
-#Program Starts Here 
-#Creat the retail items as objects.
-itemOne = RetailItem("Jacket", 12, 59.95)
-
-itemTwo = RetailItem("Designer Jeans", 40, 34.95)
-
-itemThree = RetailItem("Shirt", 20, 24.95)
-
-#Create an object that utilizes the CashRegister class. Now contains all its properties and methods.
-selected = CashRegister()
-#Enter the objects into the other object that utilizes the cash register class. 
-selected.purchase_item(itemOne)
-selected.purchase_item(itemTwo)
-selected.purchase_item(itemThree)
-#Calling and testing functions 
-selected.get_total()
-selected.get_objectList()
-selected.get_descriptions()
-selected.get_descriptions2()
-#selected.clear()
-print('\n')
-selected.checkout()

@@ -7,3 +7,5 @@ This exercise assumes you have created the `RetailItem` class for the RetailItem
 - A method named `clear` that should clear the `CashRegister` object’s internal list.
 
 Demonstrate the `CashRegister` class in a program that allows the user to select several items for purchase. When the user is ready to check out, the program should display a list of all the items he or she has selected for purchase, as well as the total price.
+
+NOTE: I added the stuff for this assignment under the retailitem_class file.
