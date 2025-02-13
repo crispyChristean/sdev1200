@@ -83,5 +83,4 @@ while selected != "exit":
 #integrate all the item objects into the cash Register
 
 #Retrieves all the item descriptions from the list containing the item objects. Superior to the first
-firstRegister.get_descriptions2()
-firstRegister.get_total()
+firstRegister.checkout()
