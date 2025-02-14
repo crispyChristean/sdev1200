@@ -16,7 +16,8 @@ def determineWinner(obj, job):
     elif obj.amountCorrect < job.amountCorrect:
         print('Player Two has Greater Points! Player Two WINS!')
     else:
-        print('BOOO, it is a draw :(')
+        print('BOOO, it is a draw :(') 
+
 questionOne = question(
     "What is 2+2?: ",
     "4",
@@ -62,8 +63,46 @@ questionFive = question(
     "Gen Asagiri",
     "Yoshihiro Togashi",
     "Hisashi Ouchi"
+) 
+
+questionSix = question(
+    "what amendment is women's suffrage?",
+    "51st",
+    "14th",
+    "19th",
+    "31st",
+    "19th"
 )
 
+questionSeven = question(
+    "What animal is amphibious and can regenerate organs/limbs",
+    "Axolotl",
+    "bear",
+    "Bobcat",
+    "Legion",
+    "Axolotl"
+)
+
+questionEight = question(
+    "What Artist drew Women with high defenition muscles in the 16th Century",
+    "Da Vinci",
+    "Andy Warhol",
+    "Michael Angelo",
+    "Edgar Allen Poe"
+)
+
+questionNine = question(
+    "Who is the world famous comic book artist that revolutionized action series",
+    "Robert Kirkman",
+    "Akira Toriyama",
+    "William Shakespeare",
+    "Hirohiko Araki",
+    "Hirohiko Araki"
+)
+
+questionTen = question(
+    ""
+)
 playerOne = player()
 playerTwo = player()
 

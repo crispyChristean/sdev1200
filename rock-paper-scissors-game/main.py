@@ -47,7 +47,7 @@ def decideWinner(comp, user):
                 ["paper","rock"], 
                 ["scissors", "paper"] 
             ],
-            #index 3
+            #index 2
             [ 
                 ["rock", "paper"], 
                 ["paper", "scissors"], 
@@ -55,7 +55,6 @@ def decideWinner(comp, user):
             ]
         
         ]
-
     print(f'The computer chose: {comp}\nThe player chose: {user}') #Show choices
 
     # print(place) - Working correctly

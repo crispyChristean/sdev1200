@@ -61,4 +61,5 @@ class CashRegister:
         self.get_descriptions2()
         print(f'Total: ${self.get_total2()}')
         
-            
+
+registerOne = CashRegister()
