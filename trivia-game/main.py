@@ -101,7 +101,12 @@ questionNine = question(
 )
 
 questionTen = question(
-    ""
+    "Who was mainly credited to make the First Nuclear Bomb?"
+    "Dwight Eisenhower"
+    "albert einstein"
+    "Robert Oppenheimer"
+    "George Patton"
+    "Robert Oppenheimer"
 )
 playerOne = player()
 playerTwo = player()
@@ -110,6 +115,7 @@ playerTwo = player()
 
 #Player One game 
 allGames = [questionOne, questionTwo, questionThree, questionFour, questionFive]
+secondGames = [questionSix, questionSeven, questionEight, questionNine, questionTen]
 for iteration in allGames:
     test = iteration.askQuestion()
     test = iteration.check(test)
@@ -117,7 +123,7 @@ for iteration in allGames:
         playerOne.addPoint()
 
 print("SECOND PLAYER'S TURN")
-for iteration in allGames:
+for iteration in secondGames:
     test = iteration.askQuestion()
     test = iteration.check(test)
     if test == True:
