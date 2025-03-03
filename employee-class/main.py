@@ -21,6 +21,8 @@ class Employee:
 
 #Not sure what to name the objects
 
+
+
 firstEmployee = Employee("Luke Skywalker", 47899, "Training", "Jedi Master")
 secondEmployee = Employee("The Hulk", 39119, "Construction", "Demolition Worker")
 thridEmployee = Employee("Bullwinkle Moose", 81774, "Animation", "Cartoon Character")
@@ -28,3 +30,5 @@ thridEmployee = Employee("Bullwinkle Moose", 81774, "Animation", "Cartoon Charac
 firstEmployee.displayEmployees()
 secondEmployee.displayEmployees()
 thridEmployee.displayEmployees()
+
+
