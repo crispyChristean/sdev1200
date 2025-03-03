@@ -11,3 +11,5 @@ Next, write a class named `ProductionWorker` that is a subclass of the `Employee
 The workday is divided into two shifts: day and night. The shift attribute will hold an integer value representing the shift that the employee works. The day shift is shift 1 and the night shift is shift 2. Write the appropriate accessor and mutator methods for each class.
 
 Once you have written the classes, write a program that creates an object of the `ProductionWorker` class and prompts the user to enter data for each of the object’s data attributes. Store the data in the object, then use the object’s accessor methods to retrieve it and display it on the screen.
+
+* Create a productionWorker object, ask the user to enter the attributes, then use the functions to display it.
