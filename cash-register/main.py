@@ -1,111 +1,86 @@
-#Testing ground for the retailItem and cashregister assignments. Not intended for grading.
+#
 # Christian Espinoza Celis 
-# 02/12/2024
-# Cash Register Programming Project
+# 2/9/2025
+# RetailItem Class Programming Project
 # SDEV 1200
 #
-
 # Use comments liberally throughout the program. 
 
-#Gets the RetailItem class from the retailitem-class program 
-#It is important to note that the file had to be renamed due to the use of a hyphen conflicting.
+#import the retail Item 
+#import 
+
+from RetailItem import RetailItem 
+from cash_register import CashRegister
 
 
+def displayOptions():
+    print(f'Item \t\t Stock \t\t Price')
+    item_one.displayItemInfo()
+    item_two.displayItemInfo()
+    item_three.displayItemInfo()
+    item_four.displayItemInfo()
+    item_five.displayItemInfo()
+    item_six.displayItemInfo()
 
+def cleanString(givenString):
+        givenString = givenString.casefold()
+        for i in givenString:
+            if i.isspace() == True:
+                givenString = givenString.replace(" ", "")
+        return givenString
 
-class RetailItem:
+def decidingPurchase(given):
+    if given == 'one':
+        firstRegister.purchase_item(item_one)
+    elif given == 'two':
+        firstRegister.purchase_item(item_two)
+    elif given == 'three': 
+        firstRegister.purchase_item(item_three)
+    elif given == 'four':
+         firstRegister.purchase_item(item_four)
+    elif given == 'five':
+         firstRegister.purchase_item(item_five)
+    elif given =="six":
+         firstRegister.purchase_item(item_six)
+    elif given == "seven":
+         firstRegister.purchase_item(item_seven)
+    else:
+         print("Not a valid Option")
 
-    def __init__(object, description, units_in_inventory, price):
-        object.description = description
-        object.units_in_inventory = units_in_inventory
-        object.price = price
+#Program starts here
+selected = ''
 
-    def displayItemInfo(self):
-        print(f'{self.description} \t {self.units_in_inventory} \t ${self.price}')
+item_one = RetailItem("One: Jacket", 12, 59.95)
 
+item_two = RetailItem("Two: Designer Jeans", 40, 34.95)
 
+item_three = RetailItem("Three: Shirt", 20, 24.95)
 
-class CashRegister:
-    #Basically when the class is called to create the object, the object will have the data and following methods automatically.
-    def __init__(self):
-        self.holdObjects = []
-        self.holdDescriptions = []
-        self.total = 0.0 
+item_four = RetailItem("Four: Necklace", 34, 20.99)
 
-    #FOLLOWING METHODS FOR THE OBJECT TO USE:
+item_five = RetailItem("Five: Gloves", 100, 35.78)
 
-    #A method named `purchase_item` that accepts a `RetailItem` object as an argument
-    #Each time the `purchase_item` method is called, the `RetailItem` object that is passed as an argument should be added to the list.
-    def purchase_item(self, givenObject):
-        self.holdObjects.append(givenObject)
-        self.holdDescriptions.append(givenObject.description)
-        self.total += givenObject.price
+item_six = RetailItem("Six: Bracelet", 75, 12.93)
 
-    #Prints the objects, just a way to show that all the entered objects are present. 
-    def get_objectList(self):
-        print(self.holdObjects)
+item_seven = RetailItem("Seven: Eagles Hat", 356, 129.47)
 
-    #Prints the descriptions only. 
-    def get_descriptions(self):
-        print(f'Currently in Cart: ')
-        for i in self.holdDescriptions:
-            print(i)
-
-    #Prints the total but doesn't return it. 
-    def get_total(self):
-        print(f'Total: ${self.total:.2f}')
-
-    #Clears all the properties in the object. 
-    def clear(self):
-        self.holdObjects = []
-        self.holdDescriptions = []
-        self.total = 0.0 
-
-#Gets the descriptions through the property holding all retail item objects. 
-    def get_descriptions2(self):
-        print(f'Current Items in the Cart: ')
-        #Uses a for loop, each loop the object in the array will change and 
-        #we have to specify that we want to retreive only the description property from each object within.
-        for i in self.holdObjects:
-            print(i.description)
-
-#Gets the total from the property holding all the retail item objects. Returns a value at the end.
-    def get_total2(self):
-        #Make an accumulator 
-        acc = 0 
-        #Specify that we want to loop over the property (array) holding the retail objects. 
-        for i in self.holdObjects:
-            #specify that in each object we want to the price property of it.
-            acc += i.price
-        #Once it has recieved all prices, round from 2 decimal places. 
-        acc = round(acc, 2)
-        #return the variable.
-        return acc
-#A special function that utilizes two other methods. 
-    def checkout(self):
-        self.get_descriptions2()
-        print(f'Total: ${self.get_total2()}')
-        
-            
-#Program Starts Here 
-#Creat the retail items as objects.
-itemOne = RetailItem("Jacket", 12, 59.95)
-
-itemTwo = RetailItem("Designer Jeans", 40, 34.95)
-
-itemThree = RetailItem("Shirt", 20, 24.95)
-
-#Create an object that utilizes the CashRegister class. Now contains all its properties and methods.
-selected = CashRegister()
-#Enter the objects into the other object that utilizes the cash register class. 
-selected.purchase_item(itemOne)
-selected.purchase_item(itemTwo)
-selected.purchase_item(itemThree)
-#Calling and testing functions 
-selected.get_total()
-selected.get_objectList()
-selected.get_descriptions()
-selected.get_descriptions2()
-#selected.clear()
+#Displays the data in each item object.
+displayOptions()
 print('\n')
-selected.checkout()
+
+#THE cash-register part of the assignment for WEEK/MODULE 5 starts here
+#create the object that's based off the cashregister class. Containing all its properties and methods.
+firstRegister = CashRegister()
+#Create a while loop that ask for the user to select a product.
+while selected != "exit":
+    selected = input("Hello! Please type the number (as a letter)\nOR enter 'exit' to end shopping: ")
+    selected = cleanString(selected)
+    if selected == 'exit':
+            break
+    else:
+        decidingPurchase(selected)
+
+#integrate all the item objects into the cash Register
+
+#Retrieves all the item descriptions from the list containing the item objects. Superior to the first
+firstRegister.checkout()

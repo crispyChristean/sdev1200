@@ -88,7 +88,8 @@ questionEight = question(
     "Da Vinci",
     "Andy Warhol",
     "Michael Angelo",
-    "Edgar Allen Poe"
+    "Edgar Allen Poe",
+    "Michael Angelo"
 )
 
 questionNine = question(
@@ -101,11 +102,11 @@ questionNine = question(
 )
 
 questionTen = question(
-    "Who was mainly credited to make the First Nuclear Bomb?"
-    "Dwight Eisenhower"
-    "albert einstein"
-    "Robert Oppenheimer"
-    "George Patton"
+    "Who was mainly credited to make the First Nuclear Bomb?",
+    "Dwight Eisenhower",
+    "albert einstein",
+    "Robert Oppenheimer",
+    "George Patton",
     "Robert Oppenheimer"
 )
 playerOne = player()
