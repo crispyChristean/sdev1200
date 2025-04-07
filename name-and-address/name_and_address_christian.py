@@ -4,7 +4,6 @@ class myGUI:
     
     def __init__(self):
         self.main_window = tk.Tk()
-
         self.name_value = tk.StringVar()
         self.street_value = tk.StringVar()
         self.csz_value = tk.StringVar()
