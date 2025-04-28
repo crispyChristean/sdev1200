@@ -27,9 +27,7 @@ class FinalDraft():
         #Main Stuff
         self.main_window = tk.Tk()
         #Counter to hold total cost
-        self.counter = tk.DoubleVar()
         #Price Attributes
-
         #To utilize variables in tkinter, must use a tk.VariableType.
         self.count = tk.DoubleVar()
         self.oilChange = tk.DoubleVar()
@@ -41,12 +39,12 @@ class FinalDraft():
         self.tire = tk.DoubleVar()
         self.full_treatment = tk.DoubleVar()
 
-        self.counter.set(0)
-        self.oilChange.set(0)
-        self.lubeJob.set(0)
-        self.radiator.set(0)
-        self.transmission.set(0)
-        self.inspection.set(0)
+        self.count.set(30)
+        self.oilChange.set(20)
+        self.lubeJob.set(40)
+        self.radiator.set(100)
+        self.transmission.set(35)
+        self.inspection.set(200)
         self.muffler.set(0)
         self.tire.set(0)
         self.full_treatment.set(0)
@@ -55,14 +53,14 @@ class FinalDraft():
         self.button_frame = tk.Frame(self.main_window)
         self.label_frame = tk.Frame(self.main_window)
         #Buttons are here, the parameters are: frame widget, text, and variable)
-        self.o_c = tk.Checkbutton(self.button_frame, text='Oil Change: 30', variable=self.oilChange)
-        self.l_j = tk.Checkbutton(self.button_frame, text = 'Lube Job: 20', variable = self.lubeJob)
-        self.rad = tk.Checkbutton(self.button_frame, text = 'Radiator: 40', variable = self.radiator)
-        self.t_m = tk.Checkbutton(self.button_frame, text = 'transmission: 100', variable = self.transmission)
-        self.i_sp = tk.Checkbutton(self.button_frame, text = 'Insepction: 35', variable=self.inspection)
-        self.m_f = tk.Checkbutton(self.button_frame, text = 'Muffler: 200', variable = self.muffler)
-        self.t_r = tk.Checkbutton(self.button_frame, text= 'Tire Rotation', variable = self.tire)
-        self.f_t = tk.Checkbutton(self.button_frame, text = 'Full Treatment', variable=self.full_treatment)
+        self.o_c = tk.Checkbutton(self.button_frame, text='Oil Change: 30', variable=self.oilChange, command=self.update)
+        self.l_j = tk.Checkbutton(self.button_frame, text = 'Lube Job: 20', variable = self.lubeJob, command=self.update)
+        self.rad = tk.Checkbutton(self.button_frame, text = 'Radiator: 40', variable = self.radiator, command=self.update)
+        self.t_m = tk.Checkbutton(self.button_frame, text = 'transmission: 100', variable = self.transmission, command=self.update)
+        self.i_sp = tk.Checkbutton(self.button_frame, text = 'Insepction: 35', variable=self.inspection, command=self.update)
+        self.m_f = tk.Checkbutton(self.button_frame, text = 'Muffler: 200', variable = self.muffler, command=self.update)
+        self.t_r = tk.Checkbutton(self.button_frame, text= 'Tire Rotation: ', variable = self.tire, command=self.update)
+        self.f_t = tk.Checkbutton(self.button_frame, text = 'Full Treatment', variable=self.full_treatment, command=self.update)
         #Label Widget 
         self.c_c = tk.Label(self.label_frame, textvariable= self.count)
 
@@ -80,4 +78,17 @@ class FinalDraft():
         self.label_frame.pack()
 
         tk.mainloop()
+
+    def update(self):
+        total = 0
+        if self.oilChange.get(): total += 30
+        if self.lubeJob.get(): total += 20
+        if self.radiator.get(): total += 40
+        if self.transmission.get(): total += 100
+        if self.inspection.get(): total += 35
+        if self.muffler.get(): total += 200
+        if self.tire.get(): total += 20
+        if self.full_treatment.get(): total += 250
+        self.count.set(total)
+        
 testingOne = FinalDraft()
