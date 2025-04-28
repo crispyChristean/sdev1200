@@ -20,3 +20,5 @@ The `CityName` column stores the name of a city and the `Population` column stor
 * Display the city with the lowest population.
 
 Review [Getting Started with the Population Database Problem](https://mediaplayer.pearsoncmg.com/assets/gaddis_sowp6e_getting_started_with_population_db_prob) VideoNotes. You will see the output you should have for this programming challenge as well as the code.
+
+* First connect to the cities database
