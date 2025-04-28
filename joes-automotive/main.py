@@ -39,15 +39,15 @@ class FinalDraft():
         self.tire = tk.DoubleVar()
         self.full_treatment = tk.DoubleVar()
 
-        self.count.set(30)
-        self.oilChange.set(20)
-        self.lubeJob.set(40)
-        self.radiator.set(100)
-        self.transmission.set(35)
-        self.inspection.set(200)
-        self.muffler.set(0)
-        self.tire.set(0)
-        self.full_treatment.set(0)
+        self.count.set(0)
+        self.oilChange.set(30)
+        self.lubeJob.set(20)
+        self.radiator.set(40)
+        self.transmission.set(100)
+        self.inspection.set(35)
+        self.muffler.set(200)
+        self.tire.set(20)
+        self.full_treatment.set(445)
 
         #Place Frames Here
         self.button_frame = tk.Frame(self.main_window)
@@ -59,8 +59,8 @@ class FinalDraft():
         self.t_m = tk.Checkbutton(self.button_frame, text = 'transmission: 100', variable = self.transmission, command=self.update)
         self.i_sp = tk.Checkbutton(self.button_frame, text = 'Insepction: 35', variable=self.inspection, command=self.update)
         self.m_f = tk.Checkbutton(self.button_frame, text = 'Muffler: 200', variable = self.muffler, command=self.update)
-        self.t_r = tk.Checkbutton(self.button_frame, text= 'Tire Rotation: ', variable = self.tire, command=self.update)
-        self.f_t = tk.Checkbutton(self.button_frame, text = 'Full Treatment', variable=self.full_treatment, command=self.update)
+        self.t_r = tk.Checkbutton(self.button_frame, text= 'Tire Rotation: 20', variable = self.tire, command=self.update)
+        self.f_t = tk.Checkbutton(self.button_frame, text = 'Full Treatment 445', variable=self.full_treatment, command=self.update)
         #Label Widget 
         self.c_c = tk.Label(self.label_frame, textvariable= self.count)
 
