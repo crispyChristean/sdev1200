@@ -54,7 +54,7 @@ def get_menu_choice():
 def execute(choice, cursor):
     if choice == 1:
         cities_sorted_ascending(cursor)
-    elif choice ==2:
+    elif choice == 2:
         cities_sorted_descending(cursor)
     elif choice == 3:
         cities_sorted_by_name(cursor)
