@@ -11,12 +11,13 @@
 ###STEP ONE IS COMPLETED, DATABASE IS SHOWING IN DIRECTORY###
 
 #Must import sqlite3
-import sqlite3 as sql3
+import os
+import sqlite3
 
 def main():
     choice = 0
     #Establishes a connection with the database.
-    connection = sql3.connect('cities.db')
+    connection = sqlite3.connect('/workspaces/sdev1200/cities.db')
 #Gets a cursor for the Database, Cursor is an object that is able to access and manipulate the data in the DB
     cursor = connection.cursor()
     ###PERFORM OPERATIONS ON DATABASE HERE###
@@ -40,6 +41,14 @@ def display():
     print('6 - Display City with the Highest population')
     print('7 - Display Cities with the Lowest Population')
     print('8 - Exit')
+
+def get_menu_choice():
+    display()
+    choice = int(input("Please enter a NUMBER: "))
+    while choice > 8 or choice < 1:
+        choice = int(input("Please enter a Valid Input: "))
+    return choice
+
 
 def execute(choice, cursor):
     if choice == 1:
@@ -68,14 +77,14 @@ def cities_sorted_ascending(cursor):
 
 def cities_sorted_descending(cursor):
     cursor.execute('''SELECT CityName, Population
-                   FROM Cities
+                   FROM cities
                    ORDER BY Population DESC''')
     results = cursor.fetchall()
     print('\nCities By Population Descending')
     display_results(results)
 
 def cities_sorted_by_name(cursor):
-    cursor.execute('''SELECT CityNAME, Population 
+    cursor.execute('''SELECT CityName, Population 
                    FROM Cities
                    ORDER BY CityName''')
     results = cursor.fetchall()
@@ -116,10 +125,4 @@ def display_results(res):
         print(f'{row[0]:20}{row[1]:,.0f}')
     print()
 
-def get_menu_choice():
-    display()
-    choice = int(input("Please enter a NUMBER: "))
-    while choice > 8 and choice < 1:
-        choice = int(input("Please enter a Valid Input: "))
-    return choice
 main()
