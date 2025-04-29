@@ -1,5 +1,5 @@
 #
-# Name
+# Christian? Who am I anymore 
 # Date
 # Population Database Programming Project
 # SDEV 1200
@@ -15,9 +15,10 @@ import os
 import sqlite3
 
 def main():
+    db_path = os.path.abspath('cities.db')
     choice = 0
     #Establishes a connection with the database.
-    connection = sqlite3.connect('/workspaces/sdev1200/cities.db')
+    connection = sqlite3.connect(db_path)
 #Gets a cursor for the Database, Cursor is an object that is able to access and manipulate the data in the DB
     cursor = connection.cursor()
     ###PERFORM OPERATIONS ON DATABASE HERE###
