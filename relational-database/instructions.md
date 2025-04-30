@@ -15,6 +15,8 @@ The database should have the following tables:
 | MajorID | INTEGER PRIMARY KEY |
 | Name | TEXT |
 
+name - 
+majorID - text
 ### Departments Table
 
 | Column Name | Data Type |
