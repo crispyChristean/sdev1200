@@ -24,7 +24,7 @@ def get_choice():
 
 def new_dep(cursor, input_one, major_id, dept_id):
     cursor.execute('''INSERT INTO Students (Name, MajorID, DeptID)
-                   Values (?)''', (input_one, major_id, dept_id))
+                   Values (?,?,?)''', (input_one, major_id, dept_id))
 
 def view_dep(cursor, input_one):
     cursor.execute('''SELECT *
@@ -46,7 +46,7 @@ def view_all(cursor):
                    FROM Students''')
     rows = cursor.fetchall()
     print('\n',rows,'\n')
-    
+
 def execute_choice(cursor, choice):
     if choice == 1:
         input_one = input("Please give the name of the new Student: ")
