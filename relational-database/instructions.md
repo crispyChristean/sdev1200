@@ -1,39 +1,39 @@
 # Instructions 
 
-In this assignment, you will create a database named `student_info.db` that holds the following information about students at a college:
+                                    In this assignment, you will create a database named `student_info.db` that holds the following information about students at a college:
 
-* The student’s name
-* The student’s major
-* The department in which the student is enrolled 
+                                    * The student’s name
+                                    * The student’s major
+                                    * The department in which the student is enrolled 
 
-The database should have the following tables:
+                                    The database should have the following tables:
 
-### Majors Table
+                                    ### Majors Table
 
-| Column Name | Data Type |
-| ----------- | --------- |
-| MajorID | INTEGER PRIMARY KEY |
-| Name | TEXT |
+                                    | Column Name | Data Type |
+                                    | ----------- | --------- |
+                                    | MajorID | INTEGER PRIMARY KEY |
+                                    | Name | TEXT |
 
-name - 
-majorID - text
-### Departments Table
+                                    name - 
+                                    majorID - text
+                                    ### Departments Table
 
-| Column Name | Data Type |
-| ----------- | --------- |
-| DeptID | INTEGER PRIMARY KEY |
-| Name | TEXT |
+                                    | Column Name | Data Type |
+                                    | ----------- | --------- |
+                                    | DeptID | INTEGER PRIMARY KEY |
+                                    | Name | TEXT |
 
-### Students Table
+                                    ### Students Table
 
-| Column Name | Data Type |
-| ----------- | --------- |
-| StudentID | INTEGER PRIMARY KEY |
-| Name | TEXT |
-| MajorID | INTEGER (Foreign key that references the MajorID column in the Majors table) |
-| DeptID | INTEGER (Foreign key that references the DeptID column in the Departments table) |
+                                    | Column Name | Data Type |
+                                    | ----------- | --------- |
+                                    | StudentID | INTEGER PRIMARY KEY |
+                                    | Name | TEXT |
+                                    | MajorID | INTEGER (Foreign key that references the MajorID column in the Majors table) |
+                                    | DeptID | INTEGER (Foreign key that references the DeptID column in the Departments table) |
 
-The following image shows an entity relationship diagram for the database.
+                                    The following image shows an entity relationship diagram for the database.
 
 ![](relational.png)
 
